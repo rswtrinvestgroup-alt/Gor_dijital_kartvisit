@@ -265,6 +265,11 @@ body::after {
   color: var(--accent-green);
 }
 
+.bot-link {
+  display: block;
+  margin-bottom: 14px;
+}
+
 .headline {
   font-size: 0.95rem;
   font-weight: 700;
