@@ -8,6 +8,6 @@ ENV PYTHONUNBUFFERED=1
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY bot.py ai_chat.py faq.py translations.py ./
+COPY avatar.jpg bot.py ai_chat.py faq.py translations.py ./
 
 CMD ["python", "bot.py"]

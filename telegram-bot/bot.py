@@ -39,7 +39,20 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-AVATAR_PATH = Path(__file__).resolve().parent.parent / "Gor" / "avatar.jpg"
+_BOT_DIR = Path(__file__).resolve().parent
+
+
+def resolve_avatar_path() -> Path | None:
+    for candidate in (
+        _BOT_DIR / "avatar.jpg",
+        _BOT_DIR.parent / "Gor" / "avatar.jpg",
+        _BOT_DIR.parent / "gor avatar.jpg",
+    ):
+        if candidate.is_file():
+            return candidate
+    return None
+
+
 AWAITING_PHONE = "awaiting_phone"
 CHAT_HISTORY = "chat_history"
 
@@ -158,9 +171,10 @@ async def replace_message(query, text: str, reply_markup, *, show_photo: bool = 
     chat = message.chat
 
     try:
-        if show_photo and AVATAR_PATH.exists():
+        avatar = resolve_avatar_path()
+        if show_photo and avatar:
             await message.delete()
-            with AVATAR_PATH.open("rb") as photo:
+            with avatar.open("rb") as photo:
                 await chat.send_photo(
                     photo=photo,
                     caption=text,
@@ -205,8 +219,9 @@ async def send_profile(update: Update, context: ContextTypes.DEFAULT_TYPE, *, ed
         return
 
     message = update.effective_message
-    if AVATAR_PATH.exists():
-        with AVATAR_PATH.open("rb") as photo:
+    avatar = resolve_avatar_path()
+    if avatar:
+        with avatar.open("rb") as photo:
             await message.reply_photo(
                 photo=photo,
                 caption=text,
@@ -498,7 +513,9 @@ def main() -> None:
 
     ai_status = "aktif" if is_ai_enabled() else "pasif (OPENAI_API_KEY eksik)"
     mode = "webhook" if os.getenv("WEBHOOK_URL") else "polling"
-    logger.info("Gor kartvizit botu başlatılıyor... mod=%s AI=%s", mode, ai_status)
+    avatar = resolve_avatar_path()
+    avatar_status = str(avatar) if avatar else "BULUNAMADI — telegram-bot/avatar.jpg ekleyin"
+    logger.info("Gor kartvizit botu başlatılıyor... mod=%s AI=%s avatar=%s", mode, ai_status, avatar_status)
     run_bot(app, token)
 
 
