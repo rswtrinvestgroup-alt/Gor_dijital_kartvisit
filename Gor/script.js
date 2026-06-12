@@ -1,7 +1,8 @@
 const translations = {
   tr: {
     fullName: 'Gor Sargsyan',
-    pageTitle: 'Gor Sargsyan | AI Agent & Bot Uzmanı',
+    pageTitle: 'Gor Sargsyan | AI Mühendisi & Ekonomist',
+    metaDescription: '15 yıllık iş tecrübesiyle işletmeniz için otonom yapay zeka ajanları, botlar ve dönüşüm odaklı web çözümleri.',
     headline: 'AI AGENT & BOT UZMANI',
     subtitle: 'AI Mühendisi & Ekonomist · 15 Yıllık Tecrübe',
     servicesTitle: 'Yapay Zeka ile Ne Yapabilir?',
@@ -23,7 +24,8 @@ const translations = {
     formDesc: 'İşletmenizde yapay zeka ile %30 tasarruf etmenin yollarını Gor\'un tecrübesiyle keşfedin. Rehberi indirmek için numaranızı bırakın.',
     formPlaceholder: '+7 999 999 99 99',
     formBtn: 'İNDİR',
-    footer: 'Spain Office: +34 678 27 66 26',
+    phoneRuBtn: '📞 +7 922 091 82 18',
+    footerSpain: '📞 Spain Office: +34 678 27 66 26',
     whatsappCTAMsg: 'Merhaba Gor, yapay zeka otomasyon çözümlerin hakkında bilgi almak istiyorum.',
     whatsappFormMsg: 'Merhaba Gor, {phone} iletişim numaramla 15 Yıllık Tasarruf Rehberi PDF\'ini talep ediyorum.',
     shareTitle: 'Paylaş & Kaydet',
@@ -37,7 +39,8 @@ const translations = {
   },
   ru: {
     fullName: 'Гор Саргсян',
-    pageTitle: 'Гор Саргсян | Эксперт AI Agent & Bot',
+    pageTitle: 'Гор Саргсян | Инженер ИИ & Экономист',
+    metaDescription: '15 лет опыта: автономные ИИ-агенты, боты и веб-решения для роста конверсии вашего бизнеса.',
     headline: 'ЭКСПЕРТ AI AGENT & BOT',
     subtitle: 'Инженер ИИ & Экономист · 15 Лет Опыта',
     servicesTitle: 'Что может искусственный интеллект?',
@@ -59,7 +62,8 @@ const translations = {
     formDesc: 'Откройте способы сэкономить 30% в бизнесе с помощью ИИ вместе с опытом Gor. Оставьте номер для получения руководства.',
     formPlaceholder: '+7 999 999 99 99',
     formBtn: 'СКАЧАТЬ',
-    footer: 'Испанский офис: +34 678 27 66 26',
+    phoneRuBtn: '📞 +7 922 091 82 18',
+    footerSpain: '📞 Испанский офис: +34 678 27 66 26',
     whatsappCTAMsg: 'Здравствуйте Gor, хочу получить информацию о ваших решениях по автоматизации с помощью ИИ.',
     whatsappFormMsg: 'Здравствуйте Gor, прошу PDF руководства по экономии за 15 лет с моим номером {phone}.',
     shareTitle: 'Поделиться & Сохранить',
@@ -73,7 +77,8 @@ const translations = {
   },
   hy: {
     fullName: 'Գոր Սարգսյան',
-    pageTitle: 'Գոր Սարգսյան | AI Agent & Bot Մասնագետ',
+    pageTitle: 'Գոր Սարգսյան | ԱԻ Ինժեներ & Տնտեսագետ',
+    metaDescription: '15 տարվա փորձով ավտոնոմ ԱԻ գործակալներ, բոտեր և փոխակերպման կենտրոնացված վեբ լուծումներ։',
     headline: 'AI AGENT & BOT ՄԱՍՆԱԳԵՏ',
     subtitle: 'ԱԻ Ինժեներ & Տնտեսագետ · 15 Տարվա Փորձ',
     servicesTitle: 'Ինչ կարող է արհեստական բանականությունը?',
@@ -95,7 +100,8 @@ const translations = {
     formDesc: 'Բացահայտեք, թե ինչպես խնայել 30% ձեր բիզնեսում ԱԻ-ի միջոցով Gor-ի փորձով։ Թողեք ձեր համարը ուղեցույցը ստանալու համար։',
     formPlaceholder: '+7 999 999 99 99',
     formBtn: 'ՆԵՐԲԵՂԵԼ',
-    footer: 'Իսպանիայի գրասենյակ: +34 678 27 66 26',
+    phoneRuBtn: '📞 +7 922 091 82 18',
+    footerSpain: '📞 Իսպանիայի գրասենյակ: +34 678 27 66 26',
     whatsappCTAMsg: 'Բարև Gor, ցանկանում եմ տեղեկանալ ձեր ԱԻ ավտոմատացման լուծումների մասին։',
     whatsappFormMsg: 'Բարև Gor, {phone} հեռախոսահամարով խնդրում եմ 15 Տարվա Խնայողության Ուղեցույցի PDF-ը։',
     shareTitle: 'Կիսվել & Պահել',
@@ -109,7 +115,8 @@ const translations = {
   },
   es: {
     fullName: 'Gor Sargsyan',
-    pageTitle: 'Gor Sargsyan | Experto en AI Agent & Bot',
+    pageTitle: 'Gor Sargsyan | Ingeniero de IA & Economista',
+    metaDescription: '15 años de experiencia: agentes de IA autónomos, bots y soluciones web orientadas a la conversión.',
     headline: 'EXPERTO EN AI AGENT & BOT',
     subtitle: 'Ingeniero de IA & Economista · 15 Años de Experiencia',
     servicesTitle: '¿Qué puede hacer la inteligencia artificial?',
@@ -131,7 +138,8 @@ const translations = {
     formDesc: 'Descubre cómo ahorrar un 30% en tu negocio con IA junto a la experiencia de Gor. Deja tu número para descargar la guía.',
     formPlaceholder: '+7 999 999 99 99',
     formBtn: 'DESCARGAR',
-    footer: 'Oficina en España: +34 678 27 66 26',
+    phoneRuBtn: '📞 +7 922 091 82 18',
+    footerSpain: '📞 Oficina en España: +34 678 27 66 26',
     whatsappCTAMsg: 'Hola Gor, me gustaría obtener información sobre tus soluciones de automatización con IA.',
     whatsappFormMsg: 'Hola Gor, solicito el PDF de la Guía de Ahorro de 15 Años con mi número de contacto {phone}.',
     shareTitle: 'Compartir & Guardar',
@@ -145,7 +153,8 @@ const translations = {
   },
   en: {
     fullName: 'Gor Sargsyan',
-    pageTitle: 'Gor Sargsyan | AI Agent & Bot Expert',
+    pageTitle: 'Gor Sargsyan | AI Engineer & Economist',
+    metaDescription: '15 years of experience delivering autonomous AI agents, bots, and conversion-focused web solutions.',
     headline: 'AI AGENT & BOT EXPERT',
     subtitle: 'AI Engineer & Economist · 15 Years of Experience',
     servicesTitle: 'What Can Artificial Intelligence Do?',
@@ -167,7 +176,8 @@ const translations = {
     formDesc: 'Discover how to save 30% in your business with AI through Gor\'s experience. Leave your number to download the guide.',
     formPlaceholder: '+7 999 999 99 99',
     formBtn: 'DOWNLOAD',
-    footer: 'Spain Office: +34 678 27 66 26',
+    phoneRuBtn: '📞 +7 922 091 82 18',
+    footerSpain: '📞 Spain Office: +34 678 27 66 26',
     whatsappCTAMsg: 'Hello Gor, I would like to learn about your AI automation solutions.',
     whatsappFormMsg: 'Hello Gor, I am requesting the 15-Year Savings Guide PDF with my contact number {phone}.',
     shareTitle: 'Share & Save',
@@ -188,8 +198,14 @@ const EMAIL_URLS = {
 };
 
 const langCodes = { tr: 'TR', ru: 'RU', hy: 'HY', es: 'ES', en: 'EN' };
+const WHATSAPP_NUMBER = '79220918218';
 
 let currentLang = localStorage.getItem('gor-lang') || 'tr';
+
+function openSecure(url) {
+  const win = window.open(url, '_blank', 'noopener,noreferrer');
+  if (win) win.opener = null;
+}
 
 const langToggle = document.getElementById('lang-toggle');
 const langMenu = document.getElementById('lang-menu');
@@ -240,6 +256,9 @@ function setLanguage(lang) {
   });
 
   if (t.pageTitle) document.title = t.pageTitle;
+
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && t.metaDescription) metaDesc.setAttribute('content', t.metaDescription);
 
   const whatsappCta = document.getElementById('whatsapp-cta');
   if (whatsappCta && t.whatsappCTAMsg) {
@@ -332,9 +351,9 @@ document.querySelectorAll('.email-option').forEach(btn => {
     if (action === 'copy') {
       await copyEmail();
     } else if (action === 'gmail') {
-      window.open(EMAIL_URLS.gmail, '_blank');
+      openSecure(EMAIL_URLS.gmail);
     } else if (action === 'outlook') {
-      window.open(EMAIL_URLS.outlook, '_blank');
+      openSecure(EMAIL_URLS.outlook);
     }
   });
 });
@@ -346,14 +365,15 @@ document.addEventListener('click', (e) => {
 
 document.getElementById('lead-form').addEventListener('submit', function (e) {
   e.preventDefault();
-  const phone = document.getElementById('phone-input').value.trim();
+  const input = document.getElementById('phone-input');
+  const phone = input.value.replace(/\s+/g, '').trim();
   if (!phone) {
-    document.getElementById('phone-input').focus();
+    input.focus();
     return;
   }
   const t = translations[currentLang];
   const message = t.whatsappFormMsg.replace('{phone}', phone);
-  window.open(`https://wa.me/79220918218?text=${encodeURIComponent(message)}`, '_blank');
+  openSecure(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`);
 });
 
 setLanguage(currentLang);
