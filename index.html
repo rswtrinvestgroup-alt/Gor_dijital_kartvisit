@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gor Sargsyan — AI Agent & Bot Uzmanı. Digital Business Card.">
+  <title>Gor Sargsyan | AI Agent & Bot Uzmanı</title>
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="lang-switcher">
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Dil seçimi" aria-expanded="false" aria-haspopup="listbox">
+        <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M3 12h18M12 3c2.5 2.8 4 6 4 9s-1.5 6.2-4 9M12 3c-2.5 2.8-4 6-4 9s1.5 6.2 4 9"/>
+        </svg>
+        <span class="lang-current" id="lang-current">TR</span>
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
+      <ul class="lang-menu" id="lang-menu" role="listbox" aria-label="Dil listesi" hidden>
+        <li role="option"><button class="lang-option active" type="button" data-lang="tr">Türkçe</button></li>
+        <li role="option"><button class="lang-option" type="button" data-lang="ru">Русский</button></li>
+        <li role="option"><button class="lang-option" type="button" data-lang="hy">Հայերեն</button></li>
+        <li role="option"><button class="lang-option" type="button" data-lang="es">Español</button></li>
+        <li role="option"><button class="lang-option" type="button" data-lang="en">English</button></li>
+      </ul>
+    </div>
+
+    <main class="card">
+      <header class="header">
+        <div class="avatar-wrapper">
+          <img src="avatar.jpg" alt="Gor Sargsyan" class="avatar" data-i18n-alt="fullName" width="130" height="130">
+        </div>
+        <h1 class="name" data-i18n="fullName">Gor Sargsyan</h1>
+        <a href="https://x.com/laguataa?s=11" target="_blank" rel="noopener noreferrer" class="social-link">
+          @laguataa | SargsyanOfLife
+        </a>
+        <p class="headline" data-i18n="headline">AI AGENT &amp; BOT UZMANI</p>
+        <p class="subtitle" data-i18n="subtitle">AI Mühendisi &amp; Ekonomist · 15 Yıllık Tecrübe</p>
+      </header>
+
+      <section class="services">
+        <h2 class="section-title" data-i18n="servicesTitle">Yapay Zeka ile Ne Yapabilir?</h2>
+        <ul class="service-list">
+          <li class="service-item">
+            <h3 data-i18n="service1Title">Otonom Satış Ajanları (AI Agents)</h3>
+            <p data-i18n="service1Desc">7/24 çalışan, randevu alan akıllı asistan sistemleri.</p>
+          </li>
+          <li class="service-item">
+            <h3 data-i18n="service2Title">Dönüşüm Odaklı Web &amp; Landing Page</h3>
+            <p data-i18n="service2Desc">Ziyaretçiyi müşteriye çeviren yapay zeka entegreli siteler.</p>
+          </li>
+          <li class="service-item">
+            <h3 data-i18n="service3Title">Ekonomik Otomasyon ve Veri Analizi</h3>
+            <p data-i18n="service3Desc">İşletme maliyetlerini %30 azaltan veri odaklı akıllı kurgular.</p>
+          </li>
+        </ul>
+      </section>
+
+      <div class="cta-group">
+        <a href="https://wa.me/79220918218?text=Merhaba%20Gor,%20yapay%20zeka%20otomasyon%20%C3%A7%C3%B6z%C3%BCmlerin%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+           target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="whatsapp-cta" data-i18n="whatsappBtn">
+          💬 WhatsApp Anında İletişim
+        </a>
+        <a href="https://t.me/SargsyanOfLife" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-i18n="telegramBtn">
+          ✈️ Telegram Anında İletişim
+        </a>
+        <div class="email-switcher">
+          <button class="btn btn-secondary email-toggle" id="email-toggle" type="button" aria-expanded="false" aria-haspopup="menu">
+            <span data-i18n="emailBtn">✉️ gor077887@gmail.com</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+          <ul class="email-menu" id="email-menu" role="menu" hidden>
+            <li role="none"><button class="email-option" type="button" data-action="copy" role="menuitem" data-i18n="emailCopy">📋 E-postayı Kopyala</button></li>
+            <li role="none"><button class="email-option" type="button" data-action="gmail" role="menuitem" data-i18n="emailGmail">✉️ Gmail'de Aç</button></li>
+            <li role="none"><button class="email-option" type="button" data-action="outlook" role="menuitem" data-i18n="emailOutlook">📧 Outlook'ta Aç</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="lead-form">
+        <h2 data-i18n="formTitle">🚀 15 Yıllık Tasarruf Rehberi</h2>
+        <p data-i18n="formDesc">İşletmenizde yapay zeka ile %30 tasarruf etmenin yollarını Gor'un tecrübesiyle keşfedin. Rehberi indirmek için numaranızı bırakın.</p>
+        <form id="lead-form" novalidate>
+          <div class="form-group">
+            <input type="tel" id="phone-input" class="form-input" data-i18n-placeholder="formPlaceholder" placeholder="+7 999 999 99 99" required>
+            <button type="submit" class="btn-download" data-i18n="formBtn">İNDİR</button>
+          </div>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <span data-i18n="footer">Spain Office: +34 678 27 66 26</span>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js?v=6"></script>
+</body>
+</html>
