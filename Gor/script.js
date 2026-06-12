@@ -412,27 +412,6 @@ async function shareCard() {
   }
 }
 
-function renderQR(canvasId, url) {
-  const canvas = document.getElementById(canvasId);
-  if (!canvas || typeof QRCode === 'undefined') return;
-  QRCode.toCanvas(canvas, url, {
-    width: 140,
-    margin: 1,
-    color: { dark: '#00ff9f', light: '#05080f' }
-  });
-}
-
-function initQR() {
-  renderQR('qr-bot', SITE_CONFIG.telegramBot);
-  const siteUrl = getShareUrl();
-  if (siteUrl === SITE_CONFIG.telegramBot && !SITE_CONFIG.publicUrl) {
-    const wrap = document.getElementById('qr-site-wrap');
-    if (wrap) wrap.style.display = 'none';
-  } else {
-    renderQR('qr-site', siteUrl);
-  }
-}
-
 function initAnalytics() {
   const id = SITE_CONFIG.analyticsId;
   if (!id || (!id.startsWith('G-') && !id.startsWith('UA-'))) return;
@@ -448,5 +427,4 @@ function initAnalytics() {
 
 document.getElementById('vcard-btn').addEventListener('click', downloadVCard);
 document.getElementById('share-btn').addEventListener('click', shareCard);
-initQR();
 initAnalytics();
