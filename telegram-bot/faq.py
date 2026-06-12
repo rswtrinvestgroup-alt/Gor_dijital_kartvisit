@@ -119,11 +119,13 @@ FAQ_ITEMS = [
         "answers": {
             "tr": (
                 "<b>İletişim:</b>\n\n"
-                "💬 WhatsApp: +7 922 091 82 18\n"
+                "💬 WhatsApp: <a href=\"tel:+79220918218\">+7 922 091 82 18</a>\n"
                 "✈️ Telegram: @SargsyanOfLife\n"
+                "🤖 Bot: @Gor_OffLife_kartvisit_bot\n"
                 "✉️ E-posta: gor077887@gmail.com\n"
-                "📍 İspanya Ofisi: +34 678 27 66 26\n"
-                "🐦 X/Twitter: @laguataa"
+                "📍 İspanya: <a href=\"tel:+34678276626\">+34 678 27 66 26</a>\n"
+                "🐦 X: @laguataa\n"
+                "🌐 Kartvizit: rswtrinvestgroup-alt.github.io/Gor_dijital_kartvisit/Gor/"
             ),
             "ru": (
                 "<b>Контакты:</b>\n\n"
@@ -177,15 +179,15 @@ FAQ_ITEMS = [
         ],
         "answers": {
             "tr": (
-                "<b>Gor Sargsyan</b> — AI Agent & Bot Uzmanı\n"
-                "AI Mühendisi & Ekonomist · <b>15 yıllık</b> stratejik iş tecrübesi\n\n"
-                "Otonom satış ajanları, dönüşüm odaklı web siteleri ve ekonomik otomasyon "
-                "alanlarında uzmanlaşmıştır."
+                "<b>Gor Sargsyan</b> — AI Mühendisi & Ekonomist\n"
+                "<b>15 yıllık</b> stratejik iş tecrübesi\n\n"
+                "Otonom yapay zeka ajanları, dönüşüm odaklı web çözümleri ve "
+                "ekonomik otomasyon alanlarında uzmanlaşmıştır."
             ),
             "ru": (
-                "<b>Гор Саргсян</b> — Эксперт AI Agent & Bot\n"
-                "Инженер ИИ & Экономист · <b>15 лет</b> бизнес-опыта\n\n"
-                "Специализация: автономные агенты, конверсионные сайты, экономическая автоматизация."
+                "<b>Гор Саргсян</b> — Инженер ИИ & Экономист\n"
+                "<b>15 лет</b> бизнес-опыта\n\n"
+                "Специализация: автономные ИИ-агенты, конверсионные веб-решения, экономическая автоматизация."
             ),
             "hy": (
                 "<b>Գոր Սարգսյան</b> — AI Agent & Bot Մասնագետ\n"
@@ -198,9 +200,9 @@ FAQ_ITEMS = [
                 "Especializado en agentes autónomos, sitios web y automatización económica."
             ),
             "en": (
-                "<b>Gor Sargsyan</b> — AI Agent & Bot Expert\n"
-                "AI Engineer & Economist · <b>15 years</b> of business experience\n\n"
-                "Specialized in autonomous agents, conversion websites, and economic automation."
+                "<b>Gor Sargsyan</b> — AI Engineer & Economist\n"
+                "<b>15 years</b> of business experience\n\n"
+                "Specialized in autonomous AI agents, conversion-focused web solutions, and economic automation."
             ),
         },
     },

@@ -5,7 +5,7 @@ from typing import Dict, List
 
 from openai import OpenAI
 
-from translations import BOT_LINK, EMAIL, WHATSAPP_NUMBER
+from translations import BOT_LINK, CARD_URL, EMAIL, PHONE_ES, PHONE_RU, WHATSAPP_NUMBER
 
 logger = logging.getLogger(__name__)
 
@@ -24,18 +24,20 @@ SYSTEM_PROMPT = """You are the AI assistant for Gor Sargsyan's digital business 
 
 Profile:
 - Name: Gor Sargsyan
-- Title: AI Agent & Bot Expert, AI Engineer & Economist
+- Title: AI Mühendisi & Ekonomist (AI Engineer & Economist)
 - Experience: 15 years of strategic business experience
 - Services: Autonomous Sales Agents (AI Agents), Conversion-focused Web & Landing Pages, Economic Automation & Data Analysis
-- Value proposition: Data-driven solutions that can reduce business costs by up to 30%
+- Value proposition: Autonomous AI agents, bots, and conversion-focused web solutions — up to 30% cost savings
 
 Contact:
-- WhatsApp: +{whatsapp}
+- WhatsApp: {phone_ru}
+- Russia phone: {phone_ru}
+- Spain Office: {phone_es}
 - Telegram: @SargsyanOfLife
 - Email: {email}
-- Spain Office: +34 678 27 66 26
 - Twitter/X: @laguataa
 - Bot: {bot_link}
+- Digital card: {card_url}
 
 Order process:
 1. Customer describes their need (AI Agent, Web, Automation)
@@ -63,8 +65,11 @@ Rules:
 def build_system_prompt(lang: str) -> str:
     return SYSTEM_PROMPT.format(
         whatsapp=WHATSAPP_NUMBER,
+        phone_ru=PHONE_RU,
+        phone_es=PHONE_ES,
         email=EMAIL,
         bot_link=BOT_LINK,
+        card_url=CARD_URL,
         language=LANG_NAMES.get(lang, "English"),
     )
 

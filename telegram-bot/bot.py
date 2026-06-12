@@ -20,8 +20,11 @@ from telegram.ext import (
 from ai_chat import check_ai_rate_limit, get_ai_response, is_ai_enabled
 from faq import FAQ_ITEMS, find_faq_answer, get_faq_by_id, is_greeting
 from translations import (
+    CARD_URL,
     EMAIL,
     LANG_BUTTONS,
+    PHONE_ES,
+    PHONE_RU,
     TELEGRAM_CONTACT,
     TRANSLATIONS,
     TWITTER,
@@ -53,6 +56,10 @@ def whatsapp_url(message: str) -> str:
     return f"https://wa.me/{WHATSAPP_NUMBER}?text={quote(message)}"
 
 
+def normalize_phone(raw: str) -> str:
+    return re.sub(r"\s+", "", raw.strip())
+
+
 def build_profile_text(lang: str) -> str:
     t = get_t(lang)
     return (
@@ -61,7 +68,9 @@ def build_profile_text(lang: str) -> str:
         f"{t['welcome']}\n\n"
         f"<b>{t['headline']}</b>\n"
         f"<i>{t['subtitle']}</i>\n\n"
-        f"📍 {t['footer']}"
+        f"{t['tagline']}\n\n"
+        f"{t['footerRu']}\n"
+        f"{t['footerSpain']}"
     )
 
 
@@ -89,9 +98,14 @@ def main_menu_keyboard(lang: str) -> InlineKeyboardMarkup:
             InlineKeyboardButton(t["btnFAQ"], callback_data="menu:faq"),
             InlineKeyboardButton(t["btnAI"], callback_data="menu:ai"),
         ],
+        [InlineKeyboardButton(t["btnWhatsApp"], url=whatsapp_url(t["whatsappCTAMsg"]))],
         [
-            InlineKeyboardButton(t["btnWhatsApp"], url=whatsapp_url(t["whatsappCTAMsg"])),
             InlineKeyboardButton(t["btnTelegram"], url=TELEGRAM_CONTACT),
+            InlineKeyboardButton(t["btnCard"], url=CARD_URL),
+        ],
+        [
+            InlineKeyboardButton(t["btnPhoneRu"], callback_data="menu:phone_ru"),
+            InlineKeyboardButton(t["btnPhoneEs"], callback_data="menu:phone_es"),
         ],
         [
             InlineKeyboardButton(t["btnEmail"], callback_data="menu:email"),
@@ -307,6 +321,25 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         )
         return
 
+    if data == "menu:phone_ru":
+        await replace_message(
+            query,
+            f"{t['footerRu']}\n\n"
+            f'<a href="tel:{PHONE_RU}">{PHONE_RU}</a>\n'
+            f'<a href="{whatsapp_url(t["whatsappCTAMsg"])}">WhatsApp</a>',
+            back_keyboard(lang),
+        )
+        return
+
+    if data == "menu:phone_es":
+        await replace_message(
+            query,
+            f"{t['footerSpain']}\n\n"
+            f'<a href="tel:{PHONE_ES}">{PHONE_ES}</a>',
+            back_keyboard(lang),
+        )
+        return
+
     if data == "menu:guide":
         context.user_data[AWAITING_PHONE] = True
         await replace_message(
@@ -334,7 +367,7 @@ async def notify_admin(context: ContextTypes.DEFAULT_TYPE, text: str) -> None:
 async def handle_phone_input(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     lang = get_lang(context)
     t = get_t(lang)
-    phone = update.message.text.strip()
+    phone = normalize_phone(update.message.text)
 
     if not re.search(r"\d{6,}", phone):
         await update.message.reply_text(t["phoneInvalid"])
