@@ -17,7 +17,7 @@ from telegram.ext import (
     filters,
 )
 
-from ai_chat import get_ai_response, is_ai_enabled
+from ai_chat import check_ai_rate_limit, get_ai_response, is_ai_enabled
 from faq import FAQ_ITEMS, find_faq_answer, get_faq_by_id, is_greeting
 from translations import (
     EMAIL,
@@ -321,6 +321,16 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         await replace_message(query, t["chooseLang"], language_keyboard())
 
 
+async def notify_admin(context: ContextTypes.DEFAULT_TYPE, text: str) -> None:
+    admin_id = os.getenv("ADMIN_CHAT_ID")
+    if not admin_id:
+        return
+    try:
+        await context.bot.send_message(chat_id=int(admin_id), text=text, parse_mode="HTML")
+    except Exception:
+        logger.exception("Admin bildirimi gönderilemedi")
+
+
 async def handle_phone_input(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     lang = get_lang(context)
     t = get_t(lang)
@@ -337,6 +347,15 @@ async def handle_phone_input(update: Update, context: ContextTypes.DEFAULT_TYPE)
         [InlineKeyboardButton(t["btnBack"], callback_data="menu:home")],
     ])
     await update.message.reply_text(t["phoneThanks"], reply_markup=keyboard)
+    user = update.effective_user
+    username = f"@{user.username}" if user.username else user.full_name
+    await notify_admin(
+        context,
+        f"📞 <b>Yeni rehber talebi</b>\n\n"
+        f"👤 {username}\n"
+        f"📱 {phone}\n"
+        f"🆔 ID: {user.id}",
+    )
 
 
 async def handle_text_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -362,6 +381,13 @@ async def handle_text_message(update: Update, context: ContextTypes.DEFAULT_TYPE
         return
 
     if is_ai_enabled():
+        user_id = update.effective_user.id
+        if not check_ai_rate_limit(user_id):
+            await update.message.reply_text(
+                "⏳ " + ("Lütfen birkaç saniye bekleyin." if lang == "tr" else "Please wait a few seconds."),
+                reply_markup=main_menu_keyboard(lang),
+            )
+            return
         thinking = await update.message.reply_text(t["aiThinking"])
         try:
             history = context.user_data.setdefault(CHAT_HISTORY, [])
@@ -394,6 +420,27 @@ async def post_init(app: Application) -> None:
     ])
 
 
+def run_bot(app: Application, token: str) -> None:
+    webhook_url = os.getenv("WEBHOOK_URL", "").strip()
+    if webhook_url:
+        port = int(os.getenv("PORT", "8080"))
+        full_webhook = f"{webhook_url.rstrip('/')}/{token}"
+        logger.info("Webhook modu: port=%s", port)
+        app.run_webhook(
+            listen="0.0.0.0",
+            port=port,
+            url_path=token,
+            webhook_url=full_webhook,
+            allowed_updates=Update.ALL_TYPES,
+        )
+        return
+
+    if sys.platform == "win32":
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    asyncio.set_event_loop(asyncio.new_event_loop())
+    app.run_polling(allowed_updates=Update.ALL_TYPES)
+
+
 def main() -> None:
     token = os.getenv("TELEGRAM_BOT_TOKEN")
     if not token:
@@ -417,12 +464,9 @@ def main() -> None:
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text_message))
 
     ai_status = "aktif" if is_ai_enabled() else "pasif (OPENAI_API_KEY eksik)"
-    logger.info("Gor kartvizit botu çalışıyor... AI: %s", ai_status)
-
-    if sys.platform == "win32":
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-    asyncio.set_event_loop(asyncio.new_event_loop())
-    app.run_polling(allowed_updates=Update.ALL_TYPES)
+    mode = "webhook" if os.getenv("WEBHOOK_URL") else "polling"
+    logger.info("Gor kartvizit botu başlatılıyor... mod=%s AI=%s", mode, ai_status)
+    run_bot(app, token)
 
 
 if __name__ == "__main__":

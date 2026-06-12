@@ -25,7 +25,15 @@ const translations = {
     formBtn: 'İNDİR',
     footer: 'Spain Office: +34 678 27 66 26',
     whatsappCTAMsg: 'Merhaba Gor, yapay zeka otomasyon çözümlerin hakkında bilgi almak istiyorum.',
-    whatsappFormMsg: 'Merhaba Gor, {phone} iletişim numaramla 15 Yıllık Tasarruf Rehberi PDF\'ini talep ediyorum.'
+    whatsappFormMsg: 'Merhaba Gor, {phone} iletişim numaramla 15 Yıllık Tasarruf Rehberi PDF\'ini talep ediyorum.',
+    shareTitle: 'Paylaş & Kaydet',
+    vcardBtn: '📇 Rehbere Kaydet',
+    shareBtn: '🔗 Paylaş',
+    qrBotLabel: 'Telegram Bot',
+    qrSiteLabel: 'Kartvizit Linki',
+    vcardDone: 'Rehbere kaydedildi!',
+    shareDone: 'Paylaşıldı!',
+    shareFail: 'Link panoya kopyalandı.'
   },
   ru: {
     fullName: 'Гор Саргсян',
@@ -53,7 +61,15 @@ const translations = {
     formBtn: 'СКАЧАТЬ',
     footer: 'Испанский офис: +34 678 27 66 26',
     whatsappCTAMsg: 'Здравствуйте Gor, хочу получить информацию о ваших решениях по автоматизации с помощью ИИ.',
-    whatsappFormMsg: 'Здравствуйте Gor, прошу PDF руководства по экономии за 15 лет с моим номером {phone}.'
+    whatsappFormMsg: 'Здравствуйте Gor, прошу PDF руководства по экономии за 15 лет с моим номером {phone}.',
+    shareTitle: 'Поделиться & Сохранить',
+    vcardBtn: '📇 Сохранить в контакты',
+    shareBtn: '🔗 Поделиться',
+    qrBotLabel: 'Telegram Bot',
+    qrSiteLabel: 'Ссылка на визитку',
+    vcardDone: 'Контакт сохранён!',
+    shareDone: 'Отправлено!',
+    shareFail: 'Ссылка скопирована.'
   },
   hy: {
     fullName: 'Գոր Սարգսյան',
@@ -81,7 +97,15 @@ const translations = {
     formBtn: 'ՆԵՐԲԵՂԵԼ',
     footer: 'Իսպանիայի գրասենյակ: +34 678 27 66 26',
     whatsappCTAMsg: 'Բարև Gor, ցանկանում եմ տեղեկանալ ձեր ԱԻ ավտոմատացման լուծումների մասին։',
-    whatsappFormMsg: 'Բարև Gor, {phone} հեռախոսահամարով խնդրում եմ 15 Տարվա Խնայողության Ուղեցույցի PDF-ը։'
+    whatsappFormMsg: 'Բարև Gor, {phone} հեռախոսահամարով խնդրում եմ 15 Տարվա Խնայողության Ուղեցույցի PDF-ը։',
+    shareTitle: 'Կիսվել & Պահել',
+    vcardBtn: '📇 Պահել կոնտակտներում',
+    shareBtn: '🔗 Կիսվել',
+    qrBotLabel: 'Telegram Bot',
+    qrSiteLabel: 'Kartvizit հղում',
+    vcardDone: 'Կոնտակտը պահվեց!',
+    shareDone: 'Կիսվեց!',
+    shareFail: 'Հղումը պատճենվեց.'
   },
   es: {
     fullName: 'Gor Sargsyan',
@@ -109,7 +133,15 @@ const translations = {
     formBtn: 'DESCARGAR',
     footer: 'Oficina en España: +34 678 27 66 26',
     whatsappCTAMsg: 'Hola Gor, me gustaría obtener información sobre tus soluciones de automatización con IA.',
-    whatsappFormMsg: 'Hola Gor, solicito el PDF de la Guía de Ahorro de 15 Años con mi número de contacto {phone}.'
+    whatsappFormMsg: 'Hola Gor, solicito el PDF de la Guía de Ahorro de 15 Años con mi número de contacto {phone}.',
+    shareTitle: 'Compartir & Guardar',
+    vcardBtn: '📇 Guardar Contacto',
+    shareBtn: '🔗 Compartir',
+    qrBotLabel: 'Bot Telegram',
+    qrSiteLabel: 'Enlace Tarjeta',
+    vcardDone: '¡Contacto guardado!',
+    shareDone: '¡Compartido!',
+    shareFail: 'Enlace copiado.'
   },
   en: {
     fullName: 'Gor Sargsyan',
@@ -137,7 +169,15 @@ const translations = {
     formBtn: 'DOWNLOAD',
     footer: 'Spain Office: +34 678 27 66 26',
     whatsappCTAMsg: 'Hello Gor, I would like to learn about your AI automation solutions.',
-    whatsappFormMsg: 'Hello Gor, I am requesting the 15-Year Savings Guide PDF with my contact number {phone}.'
+    whatsappFormMsg: 'Hello Gor, I am requesting the 15-Year Savings Guide PDF with my contact number {phone}.',
+    shareTitle: 'Share & Save',
+    vcardBtn: '📇 Save Contact',
+    shareBtn: '🔗 Share',
+    qrBotLabel: 'Telegram Bot',
+    qrSiteLabel: 'Card Link',
+    vcardDone: 'Contact saved!',
+    shareDone: 'Shared!',
+    shareFail: 'Link copied to clipboard.'
   }
 };
 
@@ -317,3 +357,96 @@ document.getElementById('lead-form').addEventListener('submit', function (e) {
 });
 
 setLanguage(currentLang);
+
+function getShareUrl() {
+  if (SITE_CONFIG.publicUrl) return SITE_CONFIG.publicUrl.replace(/\/$/, '');
+  if (window.location.protocol.startsWith('http')) return window.location.href.split('?')[0];
+  return SITE_CONFIG.telegramBot;
+}
+
+function buildVCard() {
+  const c = SITE_CONFIG.contact;
+  return [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    `FN:${c.name}`,
+    'TITLE:AI Agent & Bot Expert',
+    `TEL;TYPE=CELL:${c.phone}`,
+    `TEL;TYPE=WORK:${c.phoneSpain}`,
+    `EMAIL:${c.email}`,
+    `URL:${SITE_CONFIG.telegramBot}`,
+    'NOTE:AI Engineer & Economist - 15 Years Experience',
+    'END:VCARD'
+  ].join('\r\n');
+}
+
+function downloadVCard() {
+  const blob = new Blob([buildVCard()], { type: 'text/vcard;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'Gor_Sargsyan.vcf';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast(translations[currentLang].vcardDone);
+}
+
+async function shareCard() {
+  const url = getShareUrl();
+  const t = translations[currentLang];
+  const data = { title: t.pageTitle || 'Gor Sargsyan', text: t.headline, url };
+  if (navigator.share) {
+    try {
+      await navigator.share(data);
+      showToast(t.shareDone);
+      return;
+    } catch (err) {
+      if (err.name === 'AbortError') return;
+    }
+  }
+  try {
+    await navigator.clipboard.writeText(url);
+    showToast(t.shareFail);
+  } catch {
+    showToast(url);
+  }
+}
+
+function renderQR(canvasId, url) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas || typeof QRCode === 'undefined') return;
+  QRCode.toCanvas(canvas, url, {
+    width: 140,
+    margin: 1,
+    color: { dark: '#00ff9f', light: '#05080f' }
+  });
+}
+
+function initQR() {
+  renderQR('qr-bot', SITE_CONFIG.telegramBot);
+  const siteUrl = getShareUrl();
+  if (siteUrl === SITE_CONFIG.telegramBot && !SITE_CONFIG.publicUrl) {
+    const wrap = document.getElementById('qr-site-wrap');
+    if (wrap) wrap.style.display = 'none';
+  } else {
+    renderQR('qr-site', siteUrl);
+  }
+}
+
+function initAnalytics() {
+  const id = SITE_CONFIG.analyticsId;
+  if (!id || (!id.startsWith('G-') && !id.startsWith('UA-'))) return;
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', id);
+}
+
+document.getElementById('vcard-btn').addEventListener('click', downloadVCard);
+document.getElementById('share-btn').addEventListener('click', shareCard);
+initQR();
+initAnalytics();

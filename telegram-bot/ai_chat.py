@@ -1,12 +1,16 @@
 import logging
 import os
-from typing import List
+from time import time
+from typing import Dict, List
 
 from openai import OpenAI
 
 from translations import BOT_LINK, EMAIL, WHATSAPP_NUMBER
 
 logger = logging.getLogger(__name__)
+
+_user_last_ai: Dict[int, float] = {}
+AI_COOLDOWN_SEC = 3.0
 
 LANG_NAMES = {
     "tr": "Turkish",
@@ -67,6 +71,15 @@ def build_system_prompt(lang: str) -> str:
 
 def is_ai_enabled() -> bool:
     return bool(os.getenv("OPENAI_API_KEY"))
+
+
+def check_ai_rate_limit(user_id: int) -> bool:
+    now = time()
+    last = _user_last_ai.get(user_id, 0)
+    if now - last < AI_COOLDOWN_SEC:
+        return False
+    _user_last_ai[user_id] = now
+    return True
 
 
 async def get_ai_response(user_message: str, lang: str, history: List[dict]) -> str:

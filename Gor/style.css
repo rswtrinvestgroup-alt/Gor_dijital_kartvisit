@@ -559,6 +559,53 @@ body::after {
   text-shadow: 0 0 12px rgba(0, 240, 255, 0.35);
 }
 
+.share-tools {
+  margin-bottom: 24px;
+  padding: 20px;
+  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(0, 240, 255, 0.06), rgba(180, 77, 255, 0.05));
+  border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.share-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.share-btn {
+  flex: 1;
+  font-size: 0.78rem;
+  padding: 12px 10px;
+}
+
+.qr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.qr-card {
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 12px;
+  background: rgba(5, 8, 15, 0.6);
+  border: 1px solid rgba(0, 255, 159, 0.15);
+}
+
+.qr-label {
+  font-size: 0.72rem;
+  color: var(--accent-cyan);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.qr-card canvas {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
 @media (max-width: 380px) {
   .form-group {
     flex-direction: column;
@@ -566,5 +613,13 @@ body::after {
 
   .btn-download {
     width: 100%;
+  }
+
+  .share-actions {
+    flex-direction: column;
+  }
+
+  .qr-grid {
+    grid-template-columns: 1fr;
   }
 }
