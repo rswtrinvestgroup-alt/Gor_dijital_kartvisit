@@ -559,25 +559,6 @@ body::after {
   text-shadow: 0 0 12px rgba(0, 240, 255, 0.35);
 }
 
-.share-tools {
-  margin-bottom: 24px;
-  padding: 20px;
-  border-radius: 14px;
-  background: linear-gradient(160deg, rgba(0, 240, 255, 0.06), rgba(180, 77, 255, 0.05));
-  border: 1px solid rgba(0, 240, 255, 0.2);
-}
-
-.share-actions {
-  display: flex;
-  gap: 8px;
-}
-
-.share-btn {
-  flex: 1;
-  font-size: 0.78rem;
-  padding: 12px 10px;
-}
-
 @media (max-width: 380px) {
   .form-group {
     flex-direction: column;
@@ -585,9 +566,5 @@ body::after {
 
   .btn-download {
     width: 100%;
-  }
-
-  .share-actions {
-    flex-direction: column;
   }
 }

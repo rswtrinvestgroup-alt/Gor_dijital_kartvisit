@@ -358,61 +358,8 @@ document.getElementById('lead-form').addEventListener('submit', function (e) {
 
 setLanguage(currentLang);
 
-function getShareUrl() {
-  if (SITE_CONFIG.publicUrl) return SITE_CONFIG.publicUrl.replace(/\/$/, '');
-  if (window.location.protocol.startsWith('http')) return window.location.href.split('?')[0];
-  return SITE_CONFIG.telegramBot;
-}
-
-function buildVCard() {
-  const c = SITE_CONFIG.contact;
-  return [
-    'BEGIN:VCARD',
-    'VERSION:3.0',
-    `FN:${c.name}`,
-    'TITLE:AI Agent & Bot Expert',
-    `TEL;TYPE=CELL:${c.phone}`,
-    `TEL;TYPE=WORK:${c.phoneSpain}`,
-    `EMAIL:${c.email}`,
-    `URL:${SITE_CONFIG.telegramBot}`,
-    'NOTE:AI Engineer & Economist - 15 Years Experience',
-    'END:VCARD'
-  ].join('\r\n');
-}
-
-function downloadVCard() {
-  const blob = new Blob([buildVCard()], { type: 'text/vcard;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'Gor_Sargsyan.vcf';
-  a.click();
-  URL.revokeObjectURL(url);
-  showToast(translations[currentLang].vcardDone);
-}
-
-async function shareCard() {
-  const url = getShareUrl();
-  const t = translations[currentLang];
-  const data = { title: t.pageTitle || 'Gor Sargsyan', text: t.headline, url };
-  if (navigator.share) {
-    try {
-      await navigator.share(data);
-      showToast(t.shareDone);
-      return;
-    } catch (err) {
-      if (err.name === 'AbortError') return;
-    }
-  }
-  try {
-    await navigator.clipboard.writeText(url);
-    showToast(t.shareFail);
-  } catch {
-    showToast(url);
-  }
-}
-
 function initAnalytics() {
+  if (typeof SITE_CONFIG === 'undefined') return;
   const id = SITE_CONFIG.analyticsId;
   if (!id || (!id.startsWith('G-') && !id.startsWith('UA-'))) return;
   const s = document.createElement('script');
@@ -425,6 +372,4 @@ function initAnalytics() {
   gtag('config', id);
 }
 
-document.getElementById('vcard-btn').addEventListener('click', downloadVCard);
-document.getElementById('share-btn').addEventListener('click', shareCard);
 initAnalytics();
