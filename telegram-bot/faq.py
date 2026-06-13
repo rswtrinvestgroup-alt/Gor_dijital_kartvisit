@@ -75,7 +75,7 @@ FAQ_ITEMS = [
             "tr": (
                 "<b>Fiyatlandırma:</b>\n\n"
                 "Her proje işletmenin ihtiyacına göre özelleştirilir. "
-                "15 yıllık tecrübeyle hazırlanan çözümlerde ortalama <b>%30 maliyet tasarrufu</b> hedeflenir.\n\n"
+                "Hazırlanan çözümlerde ortalama <b>%30 maliyet tasarrufu</b> hedeflenir.\n\n"
                 "Ücretsiz ön görüşme için WhatsApp'tan yazın — projenize özel teklif hazırlanır."
             ),
             "ru": (
@@ -179,29 +179,24 @@ FAQ_ITEMS = [
         ],
         "answers": {
             "tr": (
-                "<b>Gor Sargsyan</b> — AI Mühendisi & Ekonomist\n"
-                "<b>15 yıllık</b> stratejik iş tecrübesi\n\n"
+                "<b>Gor Sargsyan</b> — Ekonomist ve AI Mühendisi\n\n"
                 "Otonom yapay zeka ajanları, dönüşüm odaklı web çözümleri ve "
                 "ekonomik otomasyon alanlarında uzmanlaşmıştır."
             ),
             "ru": (
-                "<b>Гор Саргсян</b> — Инженер ИИ & Экономист\n"
-                "<b>15 лет</b> бизнес-опыта\n\n"
+                "<b>Гор Саргсян</b> — Экономист и ИИ-инженер\n\n"
                 "Специализация: автономные ИИ-агенты, конверсионные веб-решения, экономическая автоматизация."
             ),
             "hy": (
-                "<b>Գոր Սարգսյան</b> — AI Agent & Bot Մասնագետ\n"
-                "ԱԻ Ինժեներ & Տնտեսագետ · <b>15 տարվա</b> փորձ\n\n"
+                "<b>Գոր Սարգսյան</b> — Տնտեսագետ և ԱԻ Ինժեներ\n\n"
                 "Մասնագիտացում՝ ավտոնոմ գործակալներ, վեբ կայքեր, տնտեսական ավտոմատացում։"
             ),
             "es": (
-                "<b>Gor Sargsyan</b> — Experto en AI Agent & Bot\n"
-                "Ingeniero de IA & Economista · <b>15 años</b> de experiencia\n\n"
+                "<b>Gor Sargsyan</b> — Economista e Ingeniero de IA\n\n"
                 "Especializado en agentes autónomos, sitios web y automatización económica."
             ),
             "en": (
-                "<b>Gor Sargsyan</b> — AI Engineer & Economist\n"
-                "<b>15 years</b> of business experience\n\n"
+                "<b>Gor Sargsyan</b> — Economist and AI Engineer\n\n"
                 "Specialized in autonomous AI agents, conversion-focused web solutions, and economic automation."
             ),
         },
@@ -223,28 +218,28 @@ FAQ_ITEMS = [
         ],
         "answers": {
             "tr": (
-                "<b>15 Yıllık Tasarruf Rehberi</b>\n\n"
+                "<b>Tasarruf Rehberi</b>\n\n"
                 "İşletmenizde yapay zeka ile %30 tasarruf yöntemlerini öğrenin.\n\n"
                 "Rehberi almak için ana menüden <b>🚀 Tasarruf Rehberi</b> butonuna tıklayın "
                 "ve telefon numaranızı gönderin."
             ),
             "ru": (
-                "<b>Руководство по экономии за 15 лет</b>\n\n"
+                "<b>Руководство по экономии</b>\n\n"
                 "Узнайте, как сэкономить 30% с помощью ИИ.\n\n"
                 "Нажмите <b>🚀 Руководство</b> в меню и отправьте номер телефона."
             ),
             "hy": (
-                "<b>15 Տարվա Խնայողության Ուղեցույց</b>\n\n"
+                "<b>Խնայողության Ուղեցույց</b>\n\n"
                 "Սովորեք, թե ինչպես խնայել 30% ԱԻ-ի միջոցով։\n\n"
                 "Սեղմեք <b>🚀 Ուղեցույց</b> և ուղարկեք հեռախոսահամարը։"
             ),
             "es": (
-                "<b>Guía de Ahorro de 15 Años</b>\n\n"
+                "<b>Guía de Ahorro</b>\n\n"
                 "Aprende a ahorrar 30% con IA.\n\n"
                 "Pulsa <b>🚀 Guía de Ahorro</b> en el menú y envía tu número."
             ),
             "en": (
-                "<b>15-Year Savings Guide</b>\n\n"
+                "<b>Savings Guide</b>\n\n"
                 "Learn how to save 30% with AI.\n\n"
                 "Tap <b>🚀 Savings Guide</b> in the menu and send your phone number."
             ),
@@ -440,28 +435,28 @@ FAQ_ITEMS = [
         "answers": {
             "tr": (
                 "<b>Ücretsiz Görüşme:</b>\n\n"
-                "Gor ile 15 yıllık tecrübesiyle <b>ücretsiz ön görüşme</b> yapabilirsiniz.\n\n"
+                "Gor ile <b>ücretsiz ön görüşme</b> yapabilirsiniz.\n\n"
                 "WhatsApp veya Telegram üzerinden ulaşın — ihtiyacınızı dinleyip "
                 "size özel çözüm ve teklif sunar."
             ),
             "ru": (
                 "<b>Бесплатная консультация:</b>\n\n"
-                "Бесплатная консультация с Gor и его 15-летним опытом.\n\n"
+                "Бесплатная консультация с Gor.\n\n"
                 "Напишите в WhatsApp или Telegram."
             ),
             "hy": (
                 "<b>Անվճար խորհրդատվություն:</b>\n\n"
-                "Անվճար նախնական խորհրդատվություն Gor-ի 15 տարվա փորձով։\n\n"
+                "Անվճար նախնական խորհրդատվություն Gor-ի հետ։\n\n"
                 "Գրեք WhatsApp կամ Telegram-ում։"
             ),
             "es": (
                 "<b>Consulta gratuita:</b>\n\n"
-                "Consulta gratuita con Gor y sus 15 años de experiencia.\n\n"
+                "Consulta gratuita con Gor.\n\n"
                 "Escribe por WhatsApp o Telegram."
             ),
             "en": (
                 "<b>Free Consultation:</b>\n\n"
-                "Free initial consultation with Gor and 15 years of experience.\n\n"
+                "Free initial consultation with Gor.\n\n"
                 "Message via WhatsApp or Telegram."
             ),
         },
