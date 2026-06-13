@@ -12,7 +12,7 @@ TRANSLATIONS = {
     "tr": {
         "fullName": "Gor Sargsyan",
         "headline": "Ekonomist ve AI Mühendisi",
-        "subtitle": "AI Mühendisi & Ekonomist",
+        "subtitle": "Ekonomist ve AI Mühendisi",
         "social": "@laguataa | SargsyanOfLife",
         "servicesTitle": "Yapay Zeka ile Ne Yapabilir?",
         "service1Title": "Otonom Satış Ajanları (AI Agents)",
@@ -52,7 +52,7 @@ TRANSLATIONS = {
         "aiError": "Bir hata oluştu. Lütfen tekrar deneyin veya WhatsApp'tan ulaşın.",
         "textFallback": "Sorunuzu anlayamadım. Aşağıdaki menüyü kullanabilirsiniz:",
         "welcome": "👋 Hoş geldiniz! Size nasıl yardımcı olabilirim?",
-        "greetReply": "👋 Merhaba! Gor Sargsyan — AI Mühendisi & Ekonomist.\n\nSipariş, fiyat, hizmetler veya Tasarruf Rehberi hakkında soru sorabilirsiniz.\n\nKomutlar için /help yazın.",
+        "greetReply": "👋 Merhaba! Gor Sargsyan — Ekonomist ve AI Mühendisi.\n\nSipariş, fiyat, hizmetler veya Tasarruf Rehberi hakkında soru sorabilirsiniz.\n\nKomutlar için /help yazın.",
         "btnOrder": "🛒 Sipariş Ver",
         "orderTitle": "🛒 Sipariş Ver",
         "orderText": (
@@ -79,7 +79,7 @@ TRANSLATIONS = {
     "ru": {
         "fullName": "Гор Саргсян",
         "headline": "Экономист и ИИ-инженер",
-        "subtitle": "Инженер ИИ & Экономист",
+        "subtitle": "Экономист и ИИ-инженер",
         "social": "@laguataa | SargsyanOfLife",
         "servicesTitle": "Что может искусственный интеллект?",
         "service1Title": "Автономные агенты продаж (AI Agents)",
@@ -119,7 +119,7 @@ TRANSLATIONS = {
         "aiError": "Произошла ошибка. Попробуйте снова или напишите в WhatsApp.",
         "textFallback": "Не понял вопрос. Используйте меню ниже:",
         "welcome": "👋 Добро пожаловать! Чем могу помочь?",
-        "greetReply": "👋 Здравствуйте! Gor Sargsyan — Инженер ИИ & Экономист.\n\nСпросите о заказе, ценах, услугах или руководстве по экономии.\n\n/help — список команд.",
+        "greetReply": "👋 Здравствуйте! Gor Sargsyan — Экономист и ИИ-инженер.\n\nСпросите о заказе, ценах, услугах или руководстве по экономии.\n\n/help — список команд.",
         "btnOrder": "🛒 Заказать",
         "orderTitle": "🛒 Заказать",
         "orderText": (
@@ -146,7 +146,7 @@ TRANSLATIONS = {
     "hy": {
         "fullName": "Գոր Սարգսյան",
         "headline": "Տնտեսագետ և ԱԻ Ինժեներ",
-        "subtitle": "ԱԻ Ինժեներ & Տնտեսագետ",
+        "subtitle": "Տնտեսագետ և AI Ինժեներ",
         "social": "@laguataa | SargsyanOfLife",
         "servicesTitle": "Ինչ կարող է արհեստական բանականությունը?",
         "service1Title": "Ավտոնոմ վաճառքի գործակալներ (AI Agents)",
@@ -186,7 +186,7 @@ TRANSLATIONS = {
         "aiError": "Սխալ առաջացավ։ Կրկին փորձեք կամ գրեք WhatsApp-ում։",
         "textFallback": "Հարցը չհասկացա։ Օգտագործեք ստորևի մենյուն։",
         "welcome": "👋 Բարի գալուստ! Ինչպե՞ս կարող եմ օգնել։",
-        "greetReply": "👋 Բարև! Gor Sargsyan — ԱԻ Ինժեներ & Տնտեսագետ։\n\nՀարցրեք պատվերի, գների, ծառայությունների կամ խնայողության ուղեցույցի մասին։\n\n/help — հրամաններ։",
+        "greetReply": "👋 Բարև! Gor Sargsyan — Տնտեսագետ և AI Ինժեներ։\n\nՀարցրեք պատվերի, գների, ծառայությունների կամ խնայողության ուղեցույցի մասին։\n\n/help — հրամաններ։",
         "btnOrder": "🛒 Պատվիրել",
         "orderTitle": "🛒 Պատվիրել",
         "orderText": (
@@ -213,7 +213,7 @@ TRANSLATIONS = {
     "es": {
         "fullName": "Gor Sargsyan",
         "headline": "Economista e Ingeniero de IA",
-        "subtitle": "Ingeniero de IA & Economista",
+        "subtitle": "Economista e Ingeniero de IA",
         "social": "@laguataa | SargsyanOfLife",
         "servicesTitle": "¿Qué puede hacer la inteligencia artificial?",
         "service1Title": "Agentes de Ventas Autónomos (AI Agents)",
@@ -253,7 +253,7 @@ TRANSLATIONS = {
         "aiError": "Ocurrió un error. Inténtalo de nuevo o escribe por WhatsApp.",
         "textFallback": "No entendí la pregunta. Usa el menú:",
         "welcome": "👋 ¡Bienvenido! ¿Cómo puedo ayudarte?",
-        "greetReply": "👋 ¡Hola! Gor Sargsyan — Ingeniero de IA & Economista.\n\nPregunta sobre pedidos, precios, servicios o la guía de ahorro.\n\n/help — comandos.",
+        "greetReply": "👋 ¡Hola! Gor Sargsyan — Economista e Ingeniero de IA.\n\nPregunta sobre pedidos, precios, servicios o la guía de ahorro.\n\n/help — comandos.",
         "btnOrder": "🛒 Pedir",
         "orderTitle": "🛒 Hacer Pedido",
         "orderText": (
@@ -280,7 +280,7 @@ TRANSLATIONS = {
     "en": {
         "fullName": "Gor Sargsyan",
         "headline": "Economist and AI Engineer",
-        "subtitle": "AI Engineer & Economist",
+        "subtitle": "Economist and AI Engineer",
         "social": "@laguataa | SargsyanOfLife",
         "servicesTitle": "What Can Artificial Intelligence Do?",
         "service1Title": "Autonomous Sales Agents (AI Agents)",
@@ -320,7 +320,7 @@ TRANSLATIONS = {
         "aiError": "An error occurred. Please try again or contact via WhatsApp.",
         "textFallback": "I didn't understand. Please use the menu below:",
         "welcome": "👋 Welcome! How can I help you?",
-        "greetReply": "👋 Hello! Gor Sargsyan — AI Engineer & Economist.\n\nAsk about orders, pricing, services, or the Savings Guide.\n\nType /help for commands.",
+        "greetReply": "👋 Hello! Gor Sargsyan — Economist and AI Engineer.\n\nAsk about orders, pricing, services, or the Savings Guide.\n\nType /help for commands.",
         "btnOrder": "🛒 Place Order",
         "orderTitle": "🛒 Place Order",
         "orderText": (

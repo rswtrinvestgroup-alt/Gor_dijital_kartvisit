@@ -164,11 +164,11 @@ FAQ_ITEMS = [
     {
         "id": "experience",
         "labels": {
-            "tr": "🏆 Tecrübe",
-            "ru": "🏆 Опыт",
-            "hy": "🏆 Փորձ",
-            "es": "🏆 Experiencia",
-            "en": "🏆 Experience",
+            "tr": "👤 Hakkında",
+            "ru": "👤 О Gor",
+            "hy": "👤 Gor-ի մասին",
+            "es": "👤 Sobre Gor",
+            "en": "👤 About Gor",
         },
         "keywords": [
             "tecrübe", "deneyim", "kim", "gor", "hakkında", "kimsin",
